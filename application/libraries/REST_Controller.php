@@ -656,7 +656,7 @@ abstract class REST_Controller extends CI_Controller {
         catch (CIPHPUnitTestExitException $ex)
         {
             // This block is for ci-phpunit-test
-            // This is not error. Do nothing
+            throw $ex;
         }
         catch (Exception $ex)
         {
