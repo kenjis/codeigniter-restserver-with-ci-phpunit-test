@@ -653,6 +653,11 @@ abstract class REST_Controller extends CI_Controller {
         {
             call_user_func_array([$this, $controller_method], $arguments);
         }
+        catch (CIPHPUnitTestExitException $ex)
+        {
+            // This block is for ci-phpunit-test
+            // This is not error. Do nothing
+        }
         catch (Exception $ex)
         {
             // If the method doesn't exist, then the error will be caught and an error response shown
